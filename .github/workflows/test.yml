@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: coderpatros/action-hello-world@v1
+      - uses: coderpatros/action-hello-world@7902eacf3deb66f0ae3ffa5c7a647c053aa61c97
