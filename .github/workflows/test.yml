@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  workflow_dispatch
+
+permissions: {}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # Tag branch confusion, should output "Hello world! v1 tag"
+      - uses: coderpatros/action-hello-world@v1
+      # Shadow commit
+      - uses: actions/setup-dotnet@a55eb9ae83b21bfc3efab1938edeffe211c9fb03
+      # Unicode, these are not the same
+      - uses: coderpatros/action-hello-world@6aa22f48b007348666f676eabda20e9884ed1a7f
+      - uses: coderpatros/action-hello-world@6aa22f48b007348666f676eabda20e9884ed1a7f​
+
