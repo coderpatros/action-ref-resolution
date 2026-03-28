@@ -5,6 +5,9 @@ resolution _actually_ works and how it can be abused.
 
 Example references are here [https://github.com/coderpatros/action-ref-resolution/blob/main/.github/workflows/test.yml](
 https://github.com/coderpatros/action-ref-resolution/blob/main/.github/workflows/test.yml)
+
+And an example run and output can be viewed here [https://github.com/coderpatros/action-ref-resolution/actions/runs/23672632807/job/68969113143](https://github.com/coderpatros/action-ref-resolution/actions/runs/23672632807/job/68969113143)
+
 ## Tag Branch Confusion
 
 This one I was a little surprised by as it is directly in contradiction of the
