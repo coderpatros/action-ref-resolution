@@ -3,6 +3,8 @@
 A collection of my observations while researching how GitHub Action ref
 resolution _actually_ works and how it can be abused.
 
+Example references are here [https://github.com/coderpatros/action-ref-resolution/blob/main/.github/workflows/test.yml](
+https://github.com/coderpatros/action-ref-resolution/blob/main/.github/workflows/test.yml)
 ## Tag Branch Confusion
 
 This one I was a little surprised by as it is directly in contradiction of the
