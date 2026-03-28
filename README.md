@@ -26,9 +26,9 @@ forked repos at scale. Namely, the underlying git objects on disk are shared.
 
 This has some advantages, it makes creating a fork, even of a very large repo,
 very quick. It obviously also saves a lot on storage space. And before you go
-down the rabbit hole of hash collisions possibilities, they have _alledgedly_
+down the rabbit hole of hash collision possibilities, they _alledgedly_
 have additional controls in place for when that becomes a viable attack scenario. 
-Although we'll have to test that out in the future.
+Although I'll have to explore that more in the future.
 
 This repo [https://github.com/coderpatros/donotuse-setup-dotnet](https://github.com/coderpatros/donotuse-setup-dotnet) 
 is a fork of the official upstream `setup-dotnet` GitHub action.
