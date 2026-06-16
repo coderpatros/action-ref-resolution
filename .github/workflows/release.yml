@@ -1,0 +1,47 @@
+name: Package and Release with Secrets
+
+on:
+  push:
+    tags:
+      - 'v*' # Triggers the workflow when you push a version tag like v1.0.0
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # This reads 'config.template.json' and outputs a populated 'config.json'
+      - name: Inject Secrets into Config
+        env:
+          # Map your GitHub secret to an environment variable
+          MY_HIDDEN_SECRET: ${{ secrets.API_SECRET_KEY }}
+        run: |
+          envsubst < config.template.json > config.json
+
+      - name: Package Application Artifacts
+        run: |
+          mkdir release-folder
+          cp config.json release-folder/
+          # Example: Zip the build folder with the newly injected config file
+          zip -r release-asset.zip release-folder/
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: <tofill>
+          release_name: <tofill>
+
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./release-asset.zip
+          asset_name: release-asset.zip
+          asset_content_type: application/zip
