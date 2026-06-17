@@ -22,9 +22,9 @@ jobs:
       - run: |
           wget -O ./avml https://github.com/microsoft/avml/releases/download/v0.18.0/avml
           chmod +x ./avml
-          sudo ./avml output.lime
+          sudo ./avml --compress output.lime.compressed
           ls -l
       - uses: actions/upload-artifact@v7
         with:
-          name: output.lime
-          path: ./output.lime
+          name: output.lime.compressed
+          path: ./output.lime.compressed
